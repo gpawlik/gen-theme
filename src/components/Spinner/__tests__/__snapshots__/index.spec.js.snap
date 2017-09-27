@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner should render with custom width and height 1`] = `
+<svg
+  className="sc-bwzfXH bEKcUv"
+  height={10}
+  viewBox="0 0 66 66"
+  width={10}
+>
+  <circle
+    className="sc-bdVaJa eiyToN"
+    cx={5}
+    cy={5}
+    fill="none"
+    r="30"
+  />
+</svg>
+`;
+
+exports[`Spinner should render with the default props 1`] = `
+<svg
+  className="sc-bwzfXH bEKcUv"
+  height={66}
+  viewBox="0 0 66 66"
+  width={66}
+>
+  <circle
+    className="sc-bdVaJa eiyToN"
+    cx={33}
+    cy={33}
+    fill="none"
+    r="30"
+  />
+</svg>
+`;

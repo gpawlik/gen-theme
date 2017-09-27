@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyView should render with custom text 1`] = `
+<ul
+  className="sc-bdVaJa grbsvW"
+>
+  <p
+    className="sc-bwzfXH cstZNn"
+  >
+    foo
+  </p>
+</ul>
+`;
+
+exports[`EmptyView should render with the default props 1`] = `
+<ul
+  className="sc-bdVaJa grbsvW"
+>
+  <p
+    className="sc-bwzfXH cstZNn"
+  >
+    Sorry, no results found...
+  </p>
+</ul>
+`;

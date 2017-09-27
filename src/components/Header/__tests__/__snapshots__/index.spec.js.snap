@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render with the default props 1`] = `
+<div
+  className="sc-bdVaJa lewSnC"
+>
+  <div
+    className="sc-bwzfXH lmIGyu"
+  >
+    <h1
+      className="sc-htpNat jzhphL"
+    >
+      Post finder
+    </h1>
+  </div>
+</div>
+`;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preloader should render with the default props 1`] = `
+<div
+  className="sc-htpNat cQsnYc"
+>
+  <svg
+    className="sc-bwzfXH bEKcUv"
+    height={66}
+    viewBox="0 0 66 66"
+    width={66}
+  >
+    <circle
+      className="sc-bdVaJa eiyToN"
+      cx={33}
+      cy={33}
+      fill="none"
+      r="30"
+    />
+  </svg>
+</div>
+`;

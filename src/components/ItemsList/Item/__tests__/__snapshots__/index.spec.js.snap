@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemsList/Item should render with custom props 1`] = `
+<li
+  className="sc-bdVaJa gRLtrj"
+>
+  <div
+    className="sc-bwzfXH fGIKzA"
+  />
+  <div
+    className="sc-htpNat dFmzvL"
+  >
+    <a
+      className="sc-bxivhb EGuae"
+      href="baz"
+      target="_blank"
+    >
+      foo
+    </a>
+    <p
+      className="sc-ifAKCX dqqmUa"
+    >
+      faz
+    </p>
+  </div>
+</li>
+`;
+
+exports[`ItemsList/Item should render with the default props 1`] = `
+<li
+  className="sc-bdVaJa gRLtrj"
+>
+  <div
+    className="sc-bwzfXH ccYzUD"
+  />
+  <div
+    className="sc-htpNat dFmzvL"
+  >
+    <a
+      className="sc-bxivhb EGuae"
+      href={undefined}
+      target="_blank"
+    />
+    <p
+      className="sc-ifAKCX dqqmUa"
+    />
+  </div>
+</li>
+`;

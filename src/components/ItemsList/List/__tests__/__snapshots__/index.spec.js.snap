@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemsList/List should render a list with custom props 1`] = `
+<ul
+  className="sc-bdVaJa kHlqHg"
+>
+  <Item
+    href="baz"
+    ingredients="faz"
+    thumbnail="bar"
+    title="foo"
+  />
+</ul>
+`;
+
+exports[`ItemsList/List should render an empty view with the default props 1`] = `
+<ul
+  className="sc-bdVaJa kHlqHg"
+>
+  <EmptyView />
+</ul>
+`;
