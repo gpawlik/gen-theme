@@ -27,7 +27,7 @@ export class PostList extends Component {
       <div>
         {isLoading && <Preloader />}
         <p>{post.title.rendered}</p>
-        <p>{post.content.rendered}</p>
+        <div dangerouslySetInnerHTML={{ __html: post.content.rendered }}></div>
       </div>
     );
   }

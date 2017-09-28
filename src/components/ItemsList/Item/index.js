@@ -11,7 +11,7 @@ const Item = ({ id, title, excerpt }) => {
     <Container>
       <InfoBox>
         <Title to={`/post/${id}`}>{title}</Title>
-        <Info>{excerpt}</Info>
+        <Info dangerouslySetInnerHTML={{ __html: excerpt }}></Info>
       </InfoBox>
     </Container>
   );
