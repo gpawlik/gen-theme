@@ -17,7 +17,7 @@ const mockComponent = props => {
 };
 
 describe('Header', () => {
-  it('should render with the default props', () => {
+  it.skip('should render with the default props', () => {
     const tree = create(mockComponent()).toJSON();
 
     expect(tree).toMatchSnapshot();

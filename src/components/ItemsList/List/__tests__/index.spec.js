@@ -31,10 +31,13 @@ describe('ItemsList/List', () => {
   it('should render a list with custom props', () => {
     const props = {
       data: [{
-        title: 'foo',
-        thumbnail: 'bar',
-        href: 'baz',
-        ingredients: 'faz'
+        id: 1,
+        title: {
+          rendered: 'foo'
+        },
+        excerpt: {
+          rendered: 'bar'
+        }
       }]
     };
     const tree = create(mockComponent(props)).toJSON();

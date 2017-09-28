@@ -18,10 +18,8 @@ const Item = ({ id, title, excerpt }) => {
 };
 
 Item.propTypes = {
-  title: PropTypes.string,
-  thumbnail: PropTypes.string,
-  href: PropTypes.string,
-  ingredients: PropTypes.string
+  title: PropTypes.object,
+  excerpt: PropTypes.object
 };
 
 Item.defaultProps = {

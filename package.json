@@ -33,7 +33,7 @@
     "jest-styled-components": "^4.4.1",
     "nodemon": "^1.12.1",
     "react-scripts": "1.0.13",
-    "react-test-renderer": "^15.6.1"
+    "react-test-renderer": "^16.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

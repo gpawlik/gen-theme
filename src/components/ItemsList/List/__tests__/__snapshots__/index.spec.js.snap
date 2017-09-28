@@ -5,9 +5,8 @@ exports[`ItemsList/List should render a list with custom props 1`] = `
   className="sc-bdVaJa kHlqHg"
 >
   <Item
-    href="baz"
-    ingredients="faz"
-    thumbnail="bar"
+    excerpt="bar"
+    id={1}
     title="foo"
   />
 </ul>
