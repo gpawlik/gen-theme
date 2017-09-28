@@ -13,6 +13,12 @@ export class PostList extends Component {
     super(props);
   }
 
+  componentWillMount() {
+    this.props.staticContext.head.push(
+      <meta name="description" content={'Some description'} />
+    );
+  }
+
   componentDidMount() {
     this.props.onPostsFetch();
   }

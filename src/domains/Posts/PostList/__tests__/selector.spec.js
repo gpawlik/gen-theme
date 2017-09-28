@@ -3,7 +3,7 @@ import { fromJS } from 'immutable';
 import {
   selectPosts,
   selectIsLoading
-} from 'domains/Posts/selector';
+} from 'domains/Posts/PostList/selector';
 
 describe('Posts selector', () => {
   describe('selectPosts', () => {
@@ -16,7 +16,9 @@ describe('Posts selector', () => {
         }]
       };
       const state = fromJS({
-        postsDomain: fromJS(store)
+        postsDomain: {
+          postsList: fromJS(store)
+        }
       });
 
       expect(selector(state)).toEqual(store.posts);
@@ -31,7 +33,9 @@ describe('Posts selector', () => {
         isLoading: false
       };
       const state = fromJS({
-        postsDomain: fromJS(store)
+        postsDomain: {
+          postsList: fromJS(store)
+        }
       });
 
       expect(selector(state)).toEqual(store.isLoading);

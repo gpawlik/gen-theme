@@ -1,9 +1,9 @@
 import { fromJS } from 'immutable';
 
-import * as actions from 'domains/Posts/actions';
-import postsReducer from 'domains/Posts/reducer';
+import * as actions from 'domains/Posts/PostList/actions';
+import postsReducer from 'domains/Posts/PostList/reducer';
 
-describe('ABTest reducer', () => {
+describe('PostList reducer', () => {
   let initialState;
 
   beforeEach(() => {

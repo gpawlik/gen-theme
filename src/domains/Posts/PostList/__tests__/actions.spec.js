@@ -1,6 +1,6 @@
 /*eslint-env jest, expect */
-import { actionTypes as at } from 'domains/Posts/constants';
-import * as actions from 'domains/Posts/actions';
+import { actionTypes as at } from 'domains/Posts/PostList/constants';
+import * as actions from 'domains/Posts/PostList/actions';
 
 describe('Posts actions', () => {
   describe('fetch', () => {
