@@ -7,8 +7,8 @@ import reducers from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
 const initialState = fromJS({});
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducers, initialState, composeEnhancers(applyMiddleware(sagaMiddleware)));
+// const composeEnhancers = window ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
+const store = createStore(reducers, initialState, compose(applyMiddleware(sagaMiddleware)));
 
 sagaMiddleware.run(sagas);
 
