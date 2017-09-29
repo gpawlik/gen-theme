@@ -14,9 +14,13 @@ export class PostList extends Component {
   }
 
   componentWillMount() {
-    this.props.staticContext.head.push(
-      <meta name="description" content={'Some description'} />
-    );
+    const { staticContext } = this.props;
+
+    if (staticContext) {
+      staticContext.head.push(
+        <meta name="description" content={'Some description'} />
+      );
+    }
   }
 
   componentDidMount() {
