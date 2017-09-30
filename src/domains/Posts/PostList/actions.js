@@ -1,16 +1,15 @@
+import { createAction } from 'redux-actions';
+
 import { actionTypes as at } from './constants';
 
-export const fetch = query => ({
-  type: at.POSTS_FETCH,
-  query
-});
+export const fetch = createAction(
+  at.POSTS_FETCH
+);
 
-export const fetchSuccess = data => ({
-  type: at.POSTS_FETCH_SUCCESS,
-  data
-});
+export const fetchSuccess = createAction(
+  at.POSTS_FETCH_SUCCESS, data => ({ data })
+);
 
-export const fetchError = error => ({
-  type: at.POSTS_FETCH_ERROR,
-  error
-});
+export const fetchError = createAction(
+  at.POSTS_FETCH_ERROR, error => ({ error })
+);

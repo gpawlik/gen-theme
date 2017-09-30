@@ -3,15 +3,17 @@ import { put } from 'redux-saga/effects';
 import { fetchSingleSuccess, fetchSingleError } from '../actions';
 import { fetchSinglePost } from '../saga';
 
-const query = 'foo';
+const payload = {
+  postId: 'foo'
+};
 
 describe('fetchSinglePost Saga', () => {
   let fetchPostGenerator;
 
   beforeEach(() => {
-    fetchPostGenerator = fetchSinglePost({ query });
+    fetchPostGenerator = fetchSinglePost({ payload });
 
-    const callDescriptor = fetchPostGenerator.next(query).value;
+    const callDescriptor = fetchPostGenerator.next(payload.postId).value;
 
     expect(callDescriptor).toMatchSnapshot();
   });
@@ -22,7 +24,7 @@ describe('fetchSinglePost Saga', () => {
     }];
     const putDescriptor = fetchPostGenerator.next(response).value;
 
-    expect(putDescriptor).toEqual(put(fetchSingleSuccess(response, query)));
+    expect(putDescriptor).toEqual(put(fetchSingleSuccess(response)));
   });
 
   it('should call the fetchError action if the response errors', () => {

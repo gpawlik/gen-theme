@@ -4,12 +4,9 @@ import * as actions from 'domains/Posts/PostList/actions';
 
 describe('Posts actions', () => {
   describe('fetch', () => {
-    it('should return type and query', () => {
-      const query = 'foo';
-
-      expect(actions.fetch(query)).toEqual({
-        type: at.POSTS_FETCH,
-        query: 'foo'
+    it('should return type', () => {
+      expect(actions.fetch()).toEqual({
+        type: at.POSTS_FETCH
       });
     });
   });
@@ -22,9 +19,11 @@ describe('Posts actions', () => {
 
       expect(actions.fetchSuccess(results)).toEqual({
         type: at.POSTS_FETCH_SUCCESS,
-        data: [{
-          title: 'foo'
-        }]
+        payload: {
+          data: [{
+            title: 'foo'
+          }]
+        }
       });
     });
   });
@@ -35,7 +34,9 @@ describe('Posts actions', () => {
 
       expect(actions.fetchError(error)).toEqual({
         type: at.POSTS_FETCH_ERROR,
-        error
+        payload: {
+          error
+        }
       });
     });
   });

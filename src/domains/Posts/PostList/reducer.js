@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
       return state.set('isLoading', true);
     case at.POSTS_FETCH_SUCCESS:
       return state
-        .set('posts', fromJS(action.data))
+        .set('posts', fromJS(action.payload.data))
         .set('isLoading', false);
     case at.POSTS_FETCH_ERROR:
       return state.set('isLoading', false);
