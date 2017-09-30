@@ -13,13 +13,13 @@ injectGlobal`
   }
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: ${colors.DOVE_GRAY};
+    background-color: ${colors.WHITE};
   }
   body.fontLoaded {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   #app {
-    background-color: #fafafa;
+    background-color: ${colors.WHITE};
     min-height: 100%;
     min-width: 100%;
   }
@@ -27,5 +27,17 @@ injectGlobal`
   label {
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
+  }
+  .post-content p {
+    font-size: 21px;
+    line-height: 1.58;
+    font-weight: 400;
+    color: rgba(0, 0, 0, .84);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .post-content img {
+    width: 100%;
+    height: auto;
   }
 `;

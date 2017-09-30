@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { FormattedRelative, FormattedMessage } from 'react-intl';
+
+import MetaBox from './MetaBox';
+import MetaItem from './MetaItem';
 
 const PostMeta = ({ commentsNumber, date = Date.now() }) => {
   return (
-    <p>
-      <span>
+    <MetaBox>
+      <MetaItem>
+        <FormattedRelative
+          value={date}
+        />
+      </MetaItem>
+      <MetaItem>
         <FormattedMessage
           id="comments"
           defaultMessage={
@@ -20,13 +27,8 @@ const PostMeta = ({ commentsNumber, date = Date.now() }) => {
           }
           values={{commentsCount: commentsNumber}}
         />
-      </span> -
-      <span>
-        <FormattedRelative
-          value={date}
-        />
-      </span>
-    </p>
+      </MetaItem>
+    </MetaBox>
   );
 };
 
