@@ -28,13 +28,12 @@ export class PostList extends Component {
   }
 
   render() {
-    const { post = {}, postNext, isLoading } = this.props;
+    const { post = {}, isLoading } = this.props;
     const { title = {}, content = {}, date_gmt } = post;
 
     return (
       <div>
         {isLoading && <Preloader />}
-        <p>n: {postNext}</p>
         <Content
           title={title}
           content={content}
