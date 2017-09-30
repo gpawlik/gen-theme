@@ -4,12 +4,14 @@ import * as actions from 'domains/Posts/PostSingle/actions';
 
 describe('Post single actions', () => {
   describe('fetchSingle', () => {
-    it('should return type and query', () => {
+    it('should return type and post id', () => {
       const postId = 'foo';
 
       expect(actions.fetchSingle(postId)).toEqual({
         type: at.POSTS_FETCH_SINGLE,
-        postId: 'foo'
+        payload: {
+          postId: 'foo'
+        }
       });
     });
   });
@@ -22,9 +24,11 @@ describe('Post single actions', () => {
 
       expect(actions.fetchSingleSuccess(results)).toEqual({
         type: at.POSTS_FETCH_SINGLE_SUCCESS,
-        data: [{
-          title: 'foo'
-        }]
+        payload: {
+          data: [{
+            title: 'foo'
+          }]
+        }
       });
     });
   });
@@ -35,7 +39,9 @@ describe('Post single actions', () => {
 
       expect(actions.fetchSingleError(error)).toEqual({
         type: at.POSTS_FETCH_SINGLE_ERROR,
-        error
+        payload: {
+          error
+        }
       });
     });
   });

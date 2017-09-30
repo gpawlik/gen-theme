@@ -4,9 +4,9 @@ import { fetchPost } from './service';
 import { fetchSingleSuccess, fetchSingleError } from './actions';
 import { actionTypes as at} from './constants';
 
-export function* fetchSinglePost({ postId }) {
+export function* fetchSinglePost({ payload }) {
   try {
-    const result = yield call(fetchPost, postId);
+    const result = yield call(fetchPost, payload.postId);
 
     yield put(fetchSingleSuccess(result));
   } catch (err) {

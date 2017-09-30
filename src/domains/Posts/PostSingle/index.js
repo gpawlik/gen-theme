@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { fetchSingle } from './actions';
 import { selectCurrentPost, selectIsLoading } from './selector';
 
+import Content from './Content';
 import Preloader from 'components/Preloader';
 
 export class PostList extends Component {
@@ -17,17 +18,16 @@ export class PostList extends Component {
   }
 
   render() {
-    const { post, isLoading } = this.props;
-
-    if (!post.title || !post.content) {
-      return (<div />);
-    }
+    const { post = {}, isLoading } = this.props;
+    const { title = {}, content = {} } = post;
 
     return (
       <div>
         {isLoading && <Preloader />}
-        <p>{post.title.rendered}</p>
-        <div dangerouslySetInnerHTML={{ __html: post.content.rendered }}></div>
+        <Content
+          title={title}
+          content={content}
+        />
       </div>
     );
   }
