@@ -13,6 +13,9 @@ const Container = styled(Link)`
   height: 320px;
   flex: 1;
   text-decoration: none;
+  background-image: ${({ imageUrl }) => imageUrl ? `url(${imageUrl})` : ''};
+  background-size: cover;
+  background-position: center;
 `;
 
 export default Container;

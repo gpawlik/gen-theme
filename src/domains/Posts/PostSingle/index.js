@@ -33,9 +33,8 @@ export class Post extends Component {
   render() {
     const { post = {}, isLoading } = this.props;
     const {
-      title = {},
-      content = {},
-      featured_media,
+      title,
+      content,
       date_gmt,
       featuredImageUrl
     } = post;
@@ -46,7 +45,6 @@ export class Post extends Component {
         <FlexItem>
           <Featured
             imageUrl={featuredImageUrl}
-            imageId={featured_media}
           />
         </FlexItem>
         <FlexItem>

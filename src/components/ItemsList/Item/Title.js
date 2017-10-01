@@ -5,7 +5,7 @@ import { colors } from 'variables';
 const Title = styled.h3`
   font-size: 20px;
   font-weight: 600;
-  color: ${colors.MIDNIGHT_BLUE};
+  color: ${colors.WHITE};
   margin-bottom: 5px;
   width: 100%;
 `;

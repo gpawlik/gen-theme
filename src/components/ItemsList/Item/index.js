@@ -5,9 +5,9 @@ import Container from './Container';
 import InfoBox from './InfoBox';
 import Title from './Title';
 
-const Item = ({ id, title }) => {
+const Item = ({ id, title, imageUrl }) => {
   return (
-    <Container to={`/post/${id}`}>
+    <Container to={`/post/${id}`} imageUrl={imageUrl}>
       <InfoBox>
         <Title>{title}</Title>
       </InfoBox>
@@ -16,13 +16,11 @@ const Item = ({ id, title }) => {
 };
 
 Item.propTypes = {
-  title: PropTypes.object,
-  excerpt: PropTypes.object
+  title: PropTypes.string
 };
 
 Item.defaultProps = {
-  title: {},
-  excerpt: {}
+  title: ''
 };
 
 export default Item;

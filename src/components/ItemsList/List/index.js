@@ -6,12 +6,12 @@ import Item from 'components/ItemsList/Item';
 import EmptyView from 'components/ItemsList/EmptyView';
 
 const List = ({ data }) => {
-  const results = data.map(({ id, title, excerpt }) => {
+  const results = data.map(({ id, title, featuredImageUrlThumbnail }) => {
     return (
       <Item
         id={id}
-        title={title.rendered}
-        excerpt={excerpt.rendered}
+        title={title}
+        imageUrl={featuredImageUrlThumbnail}
         key={id}
       />
     );
