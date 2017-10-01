@@ -8,11 +8,14 @@ import {
   selectIsLoading
 } from './selector';
 
+import Featured from './Featured';
 import Content from './Content';
 import Related from './Related';
 import Preloader from 'components/Preloader';
+import Flex from 'components/Layout/Flex';
+import FlexItem from 'components/Layout/FlexItem';
 
-export class PostList extends Component {
+export class Post extends Component {
   constructor(props) {
     super(props);
   }
@@ -29,18 +32,32 @@ export class PostList extends Component {
 
   render() {
     const { post = {}, isLoading } = this.props;
-    const { title = {}, content = {}, date_gmt } = post;
+    const {
+      title = {},
+      content = {},
+      featured_media,
+      date_gmt,
+      featuredImageUrl
+    } = post;
 
     return (
-      <div>
+      <Flex>
         {isLoading && <Preloader />}
-        <Content
-          title={title}
-          content={content}
-          date={date_gmt}
-        />
-        <Related />
-      </div>
+        <FlexItem>
+          <Featured
+            imageUrl={featuredImageUrl}
+            imageId={featured_media}
+          />
+        </FlexItem>
+        <FlexItem>
+          <Content
+            title={title}
+            content={content}
+            date={date_gmt}
+          />
+          <Related />
+        </FlexItem>
+      </Flex>
     );
   }
 }
@@ -58,4 +75,4 @@ export const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostList);
+export default connect(mapStateToProps, mapDispatchToProps)(Post);
