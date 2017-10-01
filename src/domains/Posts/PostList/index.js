@@ -7,6 +7,7 @@ import { selectPosts, selectIsLoading } from './selector';
 
 import ItemsList from 'components/ItemsList/List';
 import Preloader from 'components/Preloader';
+import Container from './Wrapper';
 
 export class PostList extends Component {
   constructor(props) {
@@ -31,10 +32,10 @@ export class PostList extends Component {
     const { posts, isLoading } = this.props;
 
     return (
-      <div>
+      <Container>
         {isLoading && <Preloader />}
         <ItemsList data={posts} />
-      </div>
+      </Container>
     );
   }
 }

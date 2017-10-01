@@ -4,14 +4,12 @@ import PropTypes from 'prop-types';
 import Container from './Container';
 import InfoBox from './InfoBox';
 import Title from './Title';
-import Info from './Info';
 
-const Item = ({ id, title, excerpt }) => {
+const Item = ({ id, title }) => {
   return (
-    <Container>
+    <Container to={`/post/${id}`}>
       <InfoBox>
-        <Title to={`/post/${id}`}>{title}</Title>
-        <Info dangerouslySetInnerHTML={{ __html: excerpt }}></Info>
+        <Title>{title}</Title>
       </InfoBox>
     </Container>
   );

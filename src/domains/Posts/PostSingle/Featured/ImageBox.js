@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ImageBox = styled.div`
   height: 100%;
   position: fixed;
-  background-color: red;
+  background-color: #eee;
   background-image: ${({ src }) => src ? `url(${src})` : ''};
   background-size: cover;
   background-position: center;
