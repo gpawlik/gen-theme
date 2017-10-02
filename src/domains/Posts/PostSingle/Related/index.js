@@ -11,16 +11,13 @@ export class RelatedPosts extends Component {
   }
 
   handlePostNavigation(event) {
-    const { prevId, nextId } = this.props;
+    const { prevId, nextId, history } = this.props;
+    const { keyCode } = event;
 
-    if (event.keyCode === 39) {
-      if (nextId) {
-        this.props.history.push(`/post/${nextId}`);
-      }
-    } else if (event.keyCode === 37) {
-      if (prevId) {
-        this.props.history.push(`/post/${prevId}`);
-      }
+    if (keyCode === 39 && nextId) {
+      history.push(`/post/${nextId}`);
+    } else if (keyCode === 37 && prevId) {
+      history.push(`/post/${prevId}`);
     }
   }
 
