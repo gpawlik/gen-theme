@@ -8,12 +8,8 @@ import {
   selectIsLoading
 } from './selector';
 
-import Featured from './Featured';
 import Content from './Content';
-import Related from './Related';
 import Preloader from 'components/Preloader';
-import Flex from 'components/Layout/Flex';
-import FlexItem from 'components/Layout/FlexItem';
 
 export class Post extends Component {
   constructor(props) {
@@ -40,22 +36,15 @@ export class Post extends Component {
     } = currentPost;
 
     return (
-      <Flex>
+      <div>
         {isLoading && <Preloader />}
-        <FlexItem>
-          <Featured
-            imageUrl={featuredImageUrl}
-          />
-        </FlexItem>
-        <FlexItem>
-          <Content
-            title={title}
-            content={content}
-            date={date_gmt}
-          />
-          <Related />
-        </FlexItem>
-      </Flex>
+        <Content
+          title={title}
+          content={content}
+          date={date_gmt}
+          imageUrl={featuredImageUrl}
+        />
+      </div>
     );
   }
 }
