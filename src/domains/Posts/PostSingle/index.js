@@ -31,13 +31,13 @@ export class Post extends Component {
   }
 
   render() {
-    const { post = {}, isLoading } = this.props;
+    const { currentPost = {}, isLoading } = this.props;
     const {
       title,
       content,
       date_gmt,
       featuredImageUrl
-    } = post;
+    } = currentPost;
 
     return (
       <Flex>
@@ -61,7 +61,7 @@ export class Post extends Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  post: selectCurrentPost(),
+  currentPost: selectCurrentPost(),
   isLoading: selectIsLoading()
 });
 

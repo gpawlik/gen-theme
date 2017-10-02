@@ -25,7 +25,11 @@ export class PostList extends Component {
   }
 
   componentDidMount() {
-    this.props.onPostsFetch();
+    const { posts, onPostsFetch } = this.props;
+
+    if (!posts.length) {
+      onPostsFetch();
+    }
   }
 
   render() {

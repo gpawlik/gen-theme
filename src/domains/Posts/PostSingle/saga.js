@@ -1,12 +1,16 @@
-import { call, put, fork, takeLatest } from 'redux-saga/effects';
+import { call, put, fork, select, takeLatest } from 'redux-saga/effects';
 
 import { fetchPost } from './service';
 import { fetchSingleSuccess, fetchSingleError } from './actions';
 import { actionTypes as at} from './constants';
+import { selectPosts } from 'domains/Posts/PostList/selector';
 
 export function* fetchSinglePost({ payload }) {
   try {
-    const result = yield call(fetchPost, payload.postId);
+    const postId = parseInt(payload.postId, 10);
+    const posts = yield(select(selectPosts()));
+    const postFromStore = posts.find(item => item.id === postId);
+    const result = postFromStore ? postFromStore : yield call(fetchPost, postId);
 
     yield put(fetchSingleSuccess(result));
   } catch (err) {
