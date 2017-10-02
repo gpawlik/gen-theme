@@ -6,6 +6,7 @@ const Container = styled.div`
   max-width: 900px;
   border-top: 1px solid #dedede;
   border-bottom: 1px solid #dedede;
+  display: flex;
 `;
 
 export default Container;

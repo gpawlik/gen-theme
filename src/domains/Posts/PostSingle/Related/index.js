@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import Container from './Container';
+import ItemBox from './ItemBox';
+import Item from './Item';
 
 export class RelatedPosts extends Component {
   constructor(props) {
@@ -14,9 +16,9 @@ export class RelatedPosts extends Component {
     const { prevId, nextId, history } = this.props;
     const { keyCode } = event;
 
-    if (keyCode === 39 && nextId) {
+    if (keyCode === 37 && nextId) {
       history.push(`/post/${nextId}`);
-    } else if (keyCode === 37 && prevId) {
+    } else if (keyCode === 39 && prevId) {
       history.push(`/post/${prevId}`);
     }
   }
@@ -34,12 +36,12 @@ export class RelatedPosts extends Component {
 
     return (
       <Container>
-        <div>
-          <Link to={`/post/${prevId}`}>{prevTitle}</Link>
-        </div>
-        <div>
-          <Link to={`/post/${nextId}`}>{nextTitle}</Link>
-        </div>
+        <ItemBox>
+          <Item to={`/post/${nextId}`}>{nextTitle}</Item>
+        </ItemBox>
+        <ItemBox>
+          <Item to={`/post/${prevId}`} align="left">{prevTitle}</Item>
+        </ItemBox>
       </Container>
     );
   }

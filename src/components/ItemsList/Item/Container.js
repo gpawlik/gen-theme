@@ -13,7 +13,7 @@ const Container = styled(Link)`
   height: 320px;
   flex: 1;
   text-decoration: none;
-  background-image: ${({ imageUrl }) => imageUrl ? `url(${imageUrl})` : ''};
+  background-image: ${({ background }) => background ? `url(${background})` : ''};
   background-size: cover;
   background-position: center;
 `;
