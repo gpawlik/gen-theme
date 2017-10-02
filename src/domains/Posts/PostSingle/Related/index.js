@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import { createStructuredSelector } from 'reselect';
-import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
-
-import { fetch } from 'domains/Posts/PostList/actions';
-import {
-  selectPrevPost,
-  selectNextPost
-} from './selector';
 
 import Container from './Container';
 
@@ -19,9 +11,7 @@ export class RelatedPosts extends Component {
   }
 
   handlePostNavigation(event) {
-    const { postPrev, postNext } = this.props;
-    const { id: prevId } = postPrev;
-    const { id: nextId } = postNext;
+    const { prevId, nextId } = this.props;
 
     if (event.keyCode === 39) {
       if (nextId) {
@@ -35,9 +25,6 @@ export class RelatedPosts extends Component {
   }
 
   componentDidMount() {
-    if (!this.props.postPrev.length || !this.props.postNext.length) {
-      this.props.onPostsFetch();
-    }
     document.addEventListener('keydown', this.handlePostNavigation, false);
   }
 
@@ -46,38 +33,19 @@ export class RelatedPosts extends Component {
   }
 
   render() {
-    const { postPrev, postNext } = this.props;
-    const { id: prevId, title: prevTitle = {} } = postPrev;
-    const { id: nextId, title: nextTitle = {} } = postNext;
+    const { prevId, prevTitle, nextId, nextTitle } = this.props;
 
     return (
       <Container>
         <div>
-          <p>
-            <Link to={`/post/${prevId}`}>{prevTitle.rendered}</Link>
-          </p>
+          <Link to={`/post/${prevId}`}>{prevTitle}</Link>
         </div>
         <div>
-          <p>
-            <Link to={`/post/${nextId}`}>{nextTitle.rendered}</Link>
-          </p>
+          <Link to={`/post/${nextId}`}>{nextTitle}</Link>
         </div>
       </Container>
     );
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  postPrev: selectPrevPost(),
-  postNext: selectNextPost()
-});
-
-export const mapDispatchToProps = dispatch => {
-  return {
-    onPostsFetch: () => {
-      dispatch(fetch());
-    }
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(RelatedPosts));
+export default withRouter(RelatedPosts);

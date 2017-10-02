@@ -9,7 +9,7 @@ import Related from 'domains/Posts/PostSingle/Related';
 import Flex from 'components/Layout/Flex';
 import FlexItem from 'components/Layout/FlexItem';
 
-const Content = ({ title, content, date, imageUrl }) => {
+const Content = ({ title, content, date, imageUrl, prevPost = {}, nextPost = {} }) => {
   return (
     <Flex>
       <FlexItem>
@@ -29,7 +29,12 @@ const Content = ({ title, content, date, imageUrl }) => {
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </Container>
-        <Related />
+        <Related
+          prevId={prevPost.id}
+          prevTitle={prevPost.title}
+          nextId={nextPost.id}
+          nextTitle={nextPost.title}
+        />
       </FlexItem>
     </Flex>
   );

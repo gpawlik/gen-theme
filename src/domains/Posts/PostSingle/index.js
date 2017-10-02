@@ -32,7 +32,9 @@ export class Post extends Component {
       title,
       content,
       date_gmt,
-      featuredImageUrl
+      featuredImageUrl,
+      prevPost,
+      nextPost
     } = currentPost;
 
     return (
@@ -43,6 +45,8 @@ export class Post extends Component {
           content={content}
           date={date_gmt}
           imageUrl={featuredImageUrl}
+          prevPost={prevPost}
+          nextPost={nextPost}
         />
       </div>
     );
