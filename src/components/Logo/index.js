@@ -10,6 +10,7 @@ const Logo = styled(Link)`
   color: ${({ color }) => color ? color : colors.WHITE};
   text-decoration: none;
   padding: 0.5em 0;
+  flex: 1;
 `;
 
 export default Logo;
