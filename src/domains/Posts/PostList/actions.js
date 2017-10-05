@@ -13,3 +13,15 @@ export const fetchSuccess = createAction(
 export const fetchError = createAction(
   at.POSTS_FETCH_ERROR, error => ({ error })
 );
+
+export const scrollDirection = createAction(
+  at.POSTS_SCROLL, value => ({ value })
+);
+
+export const scrollUp = createAction(
+  at.POSTS_SCROLL_UP
+);
+
+export const scrollDown = createAction(
+  at.POSTS_SCROLL_DOWN
+);

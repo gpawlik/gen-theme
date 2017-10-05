@@ -7,11 +7,13 @@ import Title from './Title';
 
 const Item = ({ id, title, imageUrl }) => {
   return (
-    <Container to={`/post/${id}`} background={imageUrl}>
-      <InfoBox>
-        <Title>{title}</Title>
-      </InfoBox>
-    </Container>
+    <div>
+      <Container to={`/post/${id}`} background={imageUrl}>
+        <InfoBox>
+          <Title>{title}</Title>
+        </InfoBox>
+      </Container>
+    </div>
   );
 };
 

@@ -12,7 +12,13 @@ const selectIsLoading = () => createSelector(
   postsState => postsState.get('isLoading')
 );
 
+const selectScrollPosition = () => createSelector(
+  selectPostsDomain(),
+  postsState => postsState.get('scrollPosition')
+);
+
 export {
   selectPosts,
-  selectIsLoading
+  selectIsLoading,
+  selectScrollPosition
 };

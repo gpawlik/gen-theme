@@ -7,7 +7,6 @@ const Title = styled.h3`
   font-weight: 600;
   color: ${colors.WHITE};
   margin-bottom: 5px;
-  width: 100%;
 `;
 
 export default Title;

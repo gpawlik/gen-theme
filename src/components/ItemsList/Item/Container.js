@@ -7,11 +7,11 @@ const Container = styled(Link)`
   background-color: ${colors.DOVE_GRAY};
   padding: 15px;
   margin: 5px;
-  display: flex;
   align-items: center;
-  max-width: 300px;
+  width: 500px;
+  float: left;
+  display: block;
   height: 320px;
-  flex: 1;
   text-decoration: none;
   background-image: ${({ background }) => background ? `url(${background})` : ''};
   background-size: cover;
